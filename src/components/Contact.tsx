@@ -3,13 +3,15 @@ import { useState } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     const form = e.target as HTMLFormElement;
     const data = new FormData(form);
     data.append("access_key", "50912fc3-1a81-497d-9631-f96e34f25ada");
-    
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: data,
@@ -17,10 +19,12 @@ export default function Contact() {
 
     if (response.ok) {
       setSubmitted(true);
+      setLoading(false);
       form.reset();
-      setTimeout(() => setSubmitted(false), 4000);
+      setTimeout(() => setSubmitted(false), 5000);
     } else {
       alert("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -55,7 +59,7 @@ export default function Contact() {
 
           <div className="flex flex-col gap-5">
             {[
-              { icon: "📞", label: "Phone", value: "+254 721380125" },
+              { icon: "📞", label: "Phone", value: "+254 721 380 125" },
               { icon: "✉️", label: "Email", value: "info@nixonsekoh.co.ke" },
               { icon: "📍", label: "Location", value: "Nairobi, Kenya" },
             ].map((c) => (
@@ -72,6 +76,17 @@ export default function Contact() {
               </div>
             ))}
           </div>
+
+          {/* WhatsApp Button */}
+          
+            href="https://wa.me/254721380125"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 mt-10 bg-green-500 hover:bg-green-400 text-white font-bold text-base px-8 py-3.5 rounded-sm transition-all duration-200 hover:-translate-y-0.5 no-underline"
+          >
+            <span className="text-xl">💬</span>
+            Chat on WhatsApp
+          </a>
         </div>
 
         {/* Form */}
@@ -85,24 +100,31 @@ export default function Contact() {
 
           {submitted ? (
             <div className="text-center py-10">
-              <div className="text-4xl mb-3">✅</div>
+              <div className="text-5xl mb-4">✅</div>
               <p className="text-gold font-bold text-lg">Message Sent!</p>
-              <p className="text-white/60 text-sm mt-1">
-                Nixon will be in touch shortly.
+              <p className="text-white/60 text-sm mt-2">
+                Thank you! Nixon will get back to you at{" "}
+                <span className="text-gold">info@nixonsekoh.co.ke</span>{" "}
+                shortly.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Hidden field to set recipient email */}
+              <input type="hidden" name="to" value="info@nixonsekoh.co.ke" />
+              <input type="hidden" name="subject" value="New Booking Request — Nixon Sekoh Website" />
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     First Name
                   </label>
-                  <input 
-name="first_name"                    type="text"
+                  <input
+                    name="first_name"
+                    type="text"
                     placeholder="John"
                     required
-                    className="w-full bg-white/8 border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
+                    className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
                     style={{ background: "rgba(255,255,255,0.07)" }}
                   />
                 </div>
@@ -110,7 +132,8 @@ name="first_name"                    type="text"
                   <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Last Name
                   </label>
-                  <input name="last_name"
+                  <input
+                    name="last_name"
                     type="text"
                     placeholder="Doe"
                     required
@@ -119,34 +142,53 @@ name="first_name"                    type="text"
                   />
                 </div>
               </div>
+
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Email
                 </label>
                 <input
- name="email"                 type="email"
+                  name="email"
+                  type="email"
                   placeholder="john@organization.com"
                   required
                   className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
+
+              <div>
+                <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                  Phone Number
+                </label>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="+254 7XX XXX XXX"
+                  className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
+                  style={{ background: "rgba(255,255,255,0.07)" }}
+                />
+              </div>
+
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Event / Organization
                 </label>
                 <input
-  name="event"                type="text"
+                  name="organization"
+                  type="text"
                   placeholder="Your event or organization"
                   className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
+
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Message
                 </label>
                 <textarea
+                  name="message"
                   rows={4}
                   placeholder="Tell Nixon about your event, date, and what you need..."
                   required
@@ -154,11 +196,13 @@ name="first_name"                    type="text"
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
+
               <button
                 type="submit"
-                className="w-full bg-gold text-navy font-bold text-base py-3.5 rounded-sm hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5"
+                disabled={loading}
+                className="w-full bg-gold text-navy font-bold text-base py-3.5 rounded-sm hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Booking Request →
+                {loading ? "Sending..." : "Send Booking Request →"}
               </button>
             </form>
           )}
