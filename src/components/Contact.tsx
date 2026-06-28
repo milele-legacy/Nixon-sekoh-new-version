@@ -31,7 +31,6 @@ export default function Contact() {
   return (
     <section id="contact" className="py-28 px-8 md:px-16 bg-navy">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-start">
-        {/* Left */}
         <div className="reveal">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-gold text-xs font-bold uppercase tracking-widest">
@@ -39,7 +38,6 @@ export default function Contact() {
             </span>
             <span className="h-0.5 w-10 bg-gold inline-block" />
           </div>
-
           <h2
             className="font-black text-white leading-tight mb-6"
             style={{
@@ -47,16 +45,13 @@ export default function Contact() {
               fontSize: "clamp(2rem, 3.5vw, 3rem)",
             }}
           >
-            Book Nixon{" "}
-            <span className="text-gold">For Your Event</span>
+            Book Nixon <span className="text-gold">For Your Event</span>
           </h2>
-
           <p className="text-white/65 text-base leading-relaxed mb-10">
             Looking for a speaker to captivate your audience and inspire action?
             Book Nixon Sekoh and watch your event transform into a springboard
             for social impact.
           </p>
-
           <div className="flex flex-col gap-5">
             {[
               { icon: "📞", label: "Phone", value: "+254 721 380 125" },
@@ -76,8 +71,6 @@ export default function Contact() {
               </div>
             ))}
           </div>
-
-          {/* WhatsApp Button */}
           
             href="https://wa.me/254721380125"
             target="_blank"
@@ -89,7 +82,6 @@ export default function Contact() {
           </a>
         </div>
 
-        {/* Form */}
         <div className="bg-white/5 border border-white/10 rounded-md p-8 reveal reveal-delay-1">
           <h3
             className="text-white font-bold text-xl mb-6"
@@ -97,23 +89,19 @@ export default function Contact() {
           >
             Send a Message
           </h3>
-
           {submitted ? (
             <div className="text-center py-10">
               <div className="text-5xl mb-4">✅</div>
               <p className="text-gold font-bold text-lg">Message Sent!</p>
               <p className="text-white/60 text-sm mt-2">
                 Thank you! Nixon will get back to you at{" "}
-                <span className="text-gold">info@nixonsekoh.co.ke</span>{" "}
-                shortly.
+                <span className="text-gold">info@nixonsekoh.co.ke</span> shortly.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Hidden field to set recipient email */}
               <input type="hidden" name="to" value="info@nixonsekoh.co.ke" />
               <input type="hidden" name="subject" value="New Booking Request — Nixon Sekoh Website" />
-
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
@@ -142,7 +130,6 @@ export default function Contact() {
                   />
                 </div>
               </div>
-
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Email
@@ -156,7 +143,6 @@ export default function Contact() {
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
-
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Phone Number
@@ -169,7 +155,6 @@ export default function Contact() {
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
-
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Event / Organization
@@ -182,7 +167,6 @@ export default function Contact() {
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
-
               <div>
                 <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                   Message
@@ -196,7 +180,6 @@ export default function Contact() {
                   style={{ background: "rgba(255,255,255,0.07)" }}
                 />
               </div>
-
               <button
                 type="submit"
                 disabled={loading}
