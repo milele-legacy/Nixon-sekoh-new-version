@@ -1,13 +1,27 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    data.append("access_key", "50912fc3-1a81-497d-9631-f96e34f25ada");
+    
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: data,
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+      form.reset();
+      setTimeout(() => setSubmitted(false), 4000);
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -41,8 +55,8 @@ export default function Contact() {
 
           <div className="flex flex-col gap-5">
             {[
-              { icon: "📞", label: "Phone", value: "+254 721 912006" },
-              { icon: "✉️", label: "Email", value: "sekohnixon@gmail.com" },
+              { icon: "📞", label: "Phone", value: "+254 721380125" },
+              { icon: "✉️", label: "Email", value: "info@nixonsekoh.co.ke" },
               { icon: "📍", label: "Location", value: "Nairobi, Kenya" },
             ].map((c) => (
               <div key={c.label} className="flex items-center gap-4">
@@ -84,8 +98,8 @@ export default function Contact() {
                   <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     First Name
                   </label>
-                  <input
-                    type="text"
+                  <input 
+name="first_name"                    type="text"
                     placeholder="John"
                     required
                     className="w-full bg-white/8 border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
@@ -96,7 +110,7 @@ export default function Contact() {
                   <label className="block text-white/60 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Last Name
                   </label>
-                  <input
+                  <input name="last_name"
                     type="text"
                     placeholder="Doe"
                     required
@@ -110,7 +124,7 @@ export default function Contact() {
                   Email
                 </label>
                 <input
-                  type="email"
+ name="email"                 type="email"
                   placeholder="john@organization.com"
                   required
                   className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
@@ -122,7 +136,7 @@ export default function Contact() {
                   Event / Organization
                 </label>
                 <input
-                  type="text"
+  name="event"                type="text"
                   placeholder="Your event or organization"
                   className="w-full border border-white/15 rounded-sm px-4 py-3 text-white text-sm outline-none focus:border-gold transition-colors placeholder:text-white/30"
                   style={{ background: "rgba(255,255,255,0.07)" }}
