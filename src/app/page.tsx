@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Pillars from "@/components/Pillars";
 import WhyChoose from "@/components/WhyChoose";
+import Partners from "@/components/Partners";
 import Gallery from "@/components/Gallery";
 import Book from "@/components/Book";
 import Contact from "@/components/Contact";
@@ -20,6 +21,7 @@ export default function Home() {
       <About />
       <Pillars />
       <WhyChoose />
+      <Partners />
       <Gallery />
       <Book />
       <Contact />

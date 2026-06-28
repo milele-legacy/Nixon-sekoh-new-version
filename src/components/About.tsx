@@ -62,17 +62,24 @@ export default function About() {
           </h2>
 
           <p className="text-[#4a4a6a] text-base leading-relaxed mb-4">
-            Nixon Sekoh is more than just a Head of NGO and Embassies at Equity
-            Bank — he&apos;s a catalyst for positive change, a champion for men who
-            have faced adversity, and a master weaver of strategic alliances that
-            empower communities across the continent.
+            Nixon Sekoh is a visionary changemaker, influential leader, and
+            driving force behind transformative impact across Africa.
+          </p>
+          <p className="text-[#4a4a6a] text-base leading-relaxed mb-4">
+            Renowned for building powerful partnerships and unlocking
+            opportunities that uplift communities, Nixon has become a trusted
+            catalyst for sustainable development and social transformation. He is
+            also a passionate advocate for men navigating life&apos;s toughest
+            challenges, using his voice and experience to inspire resilience,
+            purpose, and growth.
           </p>
           <p className="text-[#4a4a6a] text-base leading-relaxed mb-8">
-            His journey, fueled by personal values and a relentless passion for
-            social impact, makes him a captivating speaker who leaves audiences
-            inspired and equipped to take action. Having overcome personal
-            challenges himself, Nixon&apos;s story resonates deeply and inspires
-            others to persevere through adversity.
+            Fueled by unwavering values, authentic leadership, and a deep
+            commitment to creating lasting change, Nixon captivates audiences
+            with compelling insights and actionable strategies. His remarkable
+            journey of overcoming personal adversity is a powerful testament to
+            perseverance, making him a highly sought-after speaker whose message
+            motivates, empowers, and sparks meaningful action.
           </p>
 
           {/* Values grid */}

@@ -1,18 +1,23 @@
 const pillars = [
   {
-    icon: "👨‍👦",
-    name: "Empowering Men",
-    desc: "Nixon's personal story, marked by a challenging upbringing, fuels his unwavering commitment to empowering men who have faced similar struggles. He believes every man deserves the opportunity to rise above his circumstances and become a force for good in his community.",
+    icon: "🌟",
+    name: "Transforming Lives and Raising a Generation of Leaders",
+    desc: "Having navigated significant personal challenges, Nixon understands firsthand the transformative power of healing, forgiveness, and the courage to move on. His story is a testament to the fact that one's past does not have to dictate one's destiny. Passionate about inspiring personal growth and restoration, he empowers men to rise above adversity, embrace their potential, and lead lives of purpose, impact, and positive change.",
   },
   {
     icon: "🌉",
     name: "Building Bridges",
-    desc: "Nixon's expertise in forging strategic partnerships between NGOs and financial institutions is unparalleled. He bridges the gap between sectors, creating collaborations that drive sustainable development and lasting community impact.",
+    desc: "Widely recognized for his ability to bring people and institutions together, Nixon excels at building strategic partnerships that turn shared vision into meaningful action. By fostering intergenerational dialogue and strengthening collaboration across sectors, he creates platforms where diverse perspectives converge to drive innovation, inspire collective ownership, and deliver sustainable solutions that leave a lasting legacy for future generations.",
   },
   {
     icon: "🎯",
-    name: "Mobilizing Resources",
-    desc: "Nixon's skills in effective funds mobilization are crucial for NGOs seeking to make a real difference. He teaches organizations to craft compelling narratives, leverage data-driven strategies, and secure the resources they need to thrive.",
+    name: "Resource Mobilization",
+    desc: "Nixon is widely recognized for his successful approach to resource mobilization, helping organizations and individuals unlock funding opportunities that drive meaningful and lasting impact. Through creative storytelling, innovative fundraising strategies, and data-driven decision-making, he equips NGOs with the tools to craft compelling value propositions, attract strategic partners, and secure the resources they need to grow, thrive, and achieve their mission.",
+  },
+  {
+    icon: "💬",
+    name: "Intergenerational Dialogues",
+    desc: "Nixon possesses a rare ability to unite different generations in safe, meaningful spaces where honest conversations lead to understanding, healing, and action. He bridges generational divides and fosters mutual respect by connecting the wisdom of older generations with the creativity of younger voices—enabling families, leaders, and communities to move beyond misunderstanding toward collaboration and lasting social cohesion.",
   },
 ];
 
@@ -34,10 +39,10 @@ export default function Pillars() {
             fontSize: "clamp(2rem, 3.5vw, 3rem)",
           }}
         >
-          Three <span className="text-gold">Core Pillars</span>
+          Four <span className="text-gold">Core Pillars</span>
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-14">
+        <div className="grid md:grid-cols-2 gap-6 mt-14">
           {pillars.map((p, i) => (
             <div
               key={p.name}

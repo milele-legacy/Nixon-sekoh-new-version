@@ -2,22 +2,22 @@ const reasons = [
   {
     num: "01",
     title: "Unique Blend of Expertise",
-    text: "He combines his passion for empowering men with professional skills in partnerships and funds mobilization, offering a unique perspective on building impactful initiatives.",
+    text: "Drawing on both personal conviction and professional excellence, Nixon brings a distinctive perspective to social transformation. His deep understanding of human potential, coupled with his success in forging strategic partnerships and mobilizing resources, allows him to champion innovative initiatives that turn vision into action and create sustainable impact at scale.",
   },
   {
     num: "02",
     title: "Inspiring Personal Story",
-    text: "Having overcome challenges himself, Nixon's story resonates with audiences and inspires them to overcome their own obstacles with courage and determination.",
+    text: "Nixon's remarkable journey from adversity to impact captivates and inspires audiences wherever he speaks. Drawing from lived experience, he demonstrates that challenges can become catalysts for growth and transformation. His message ignites hope, fuels determination, and empowers individuals to rise above limitations, pursue their aspirations, and create meaningful change in their lives and communities.",
   },
   {
     num: "03",
     title: "Actionable Insights",
-    text: "He doesn't just motivate — he equips his audience with practical tools and strategies they can implement immediately to create real, positive change.",
+    text: "Nixon's presentations are designed to spark transformation, not just inspiration. By blending compelling storytelling with practical wisdom, he provides audiences with powerful tools, actionable strategies, and fresh perspectives that empower them to take immediate action and achieve sustainable, real-world results.",
   },
   {
     num: "04",
     title: "Engaging Speaker",
-    text: "Nixon's passion and charisma captivate audiences, making his presentations informative, insightful, and truly inspiring from start to finish.",
+    text: "A compelling communicator and engaging thought leader, Nixon combines charisma, wisdom, and practical experience to create unforgettable audience experiences. His presentations are rich with actionable insights, fresh perspectives, and powerful lessons that resonate across generations, inspiring individuals and organizations to embrace change, unlock potential, and pursue purposeful impact.",
   },
 ];
 
