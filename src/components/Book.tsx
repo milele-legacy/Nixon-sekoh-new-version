@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export default function Book() {
   return (
@@ -73,14 +73,14 @@ export default function Book() {
                   <span className="text-gold text-lg">📞</span>
                   <div>
                     <div className="text-white/50 text-xs uppercase tracking-wide">Call / WhatsApp</div>
-                    <div className="text-white font-bold text-base">0700 685 385</div>
+                    <div className="text-white font-bold text-base">+254721380125</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <a
-              href="tel:0700685385"
+              href="tel:+254721380125"
               className="inline-block bg-gold text-navy font-bold text-base px-8 py-3.5 rounded-sm hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5 no-underline"
             >
               Order Your Copy Today →
@@ -92,7 +92,7 @@ export default function Book() {
             {/* Book promo — Available Now */}
             <div className="relative mb-4">
               <Image
-                src="/images/book-promo.png"
+                src="/images/gallery/bookpromo.jpeg"
                 alt="The Gen Z Parent — From Confusion to Connection by Nixon Nyadiero Sekoh — Available Now"
                 width={600}
                 height={800}

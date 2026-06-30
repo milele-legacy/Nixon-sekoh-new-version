@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -32,14 +32,12 @@ export default function Hero() {
           <span className="text-gold">Sekoh</span>
         </h1>
 
-        <p className="text-white/60 text-lg font-light mb-6 mt-1">
-          <strong className="text-white/90 font-medium">
-            Head of NGO &amp; Embassies
-          </strong>{" "}
-          · Equity Bank Kenya
-        </p>
-
-        <p className="text-white/70 text-base leading-relaxed max-w-lg mb-10">
+        <p className="text-white/40 text-sm font-light mb-6 mt-1">
+  <strong className="text-white/60 font-medium">
+    Head of PBOs &amp; Embassies
+  </strong>{" "}
+  · Equity Bank Kenya
+</p>    <p className="text-white/70 text-base leading-relaxed max-w-lg mb-10">
           Catalyst for positive change. Champion for men who have faced
           adversity. Master weaver of strategic alliances that empower
           communities across Africa.
@@ -98,9 +96,8 @@ export default function Hero() {
 
         {/* Badge */}
         <div className="absolute bottom-12 left-0 bg-gold text-navy font-bold text-sm px-5 py-3.5 rounded-sm max-w-[220px] leading-snug shadow-2xl z-10">
-          🏆 Head of NGOs &amp; Embassies
-          <br />
-          <span className="font-medium text-xs">Equity Bank Limited, Kenya</span>
+          🏆 Speaker · Leader · Change Maker        <br />
+          <span className="font-medium text-xs">Lets work together</span>
         </div>
       </div>
     </section>
